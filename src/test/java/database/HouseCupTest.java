@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 public class HouseCupTest {
 
     HouseCup hc = new HouseCup(
-            "jdbc:postgresql://localhost:5432/<adatbazisodneve>",
-            "<username>", "<password>");
+            "jdbc:postgresql://localhost:5432/test_db",
+            "marton", "b587331B");
 
     @Test
     void testGetHouseCupWinner() {
