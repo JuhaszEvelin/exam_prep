@@ -14,7 +14,9 @@ public class UniqueFinderTest {
         String test = "szerepjatek";
         char [] result = {'s', 'z', 'e', 'r', 'p', 'j', 'a', 't', 'k'};
         char [] input = uf.uniqueChars(test);
-        assertEquals(result, input);
+        for (int i = 0; i < result.length; i++) {
+            assertEquals(result[i], input[i]);
+        }
     }
 
     @Test
@@ -22,7 +24,9 @@ public class UniqueFinderTest {
         String test = "  szer@epja!te  k";
         char [] result = {'s', 'z', 'e', 'r', 'p', 'j', 'a', 't', 'k'};
         char [] input = uf.uniqueChars(test);
-        assertEquals(result, input);
+        for (int i = 0; i < result.length; i++) {
+            assertEquals(result[i], input[i]);
+        }
     }
 
     @Test
