@@ -3,25 +3,22 @@ package io;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class DaVinciCode {
 
     public int decode(String path, char c){
-        return (int) inputToCharList(path).stream().filter(c1 -> c1 == c).count();
+        return (int) inputToStringList(path).stream().filter(c1 -> c1.equals(String.valueOf(c))).count();
     }
 
-    private List<Character> inputToCharList(String file) {
+    private List<String> inputToStringList(String file) {
         Path path = Path.of(file);
-        List<Character> chars = new ArrayList<>();
-        char [] lineToChar;
+        List<String> chars = new ArrayList<>();
         try (Scanner scanner = new Scanner(path)){
             while (scanner.hasNextLine()) {
-                lineToChar = scanner.nextLine().toLowerCase().toCharArray();
-                for (Character c : lineToChar) {
-                    chars.add(c);
-                }
+                chars.addAll(Arrays.asList(scanner.nextLine().toLowerCase().split("")));
             }
         } catch (IOException e) {
             System.out.println("file not found");

@@ -17,7 +17,7 @@ public class DaVinciCodeTest {
     void testDecode_file2(){
         String path = "src/main/resources/io2.txt";
         char find = '1';
-        assertEquals(1, dvc.decode(path, find));
+        assertEquals(0, dvc.decode(path, find));
     }
 
     @Test

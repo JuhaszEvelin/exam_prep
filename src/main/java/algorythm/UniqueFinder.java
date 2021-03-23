@@ -9,5 +9,4 @@ public class UniqueFinder {
         if (s == null) throw new IllegalArgumentException();
         return Arrays.stream(s.split("")).distinct().collect(Collectors.joining()).toCharArray();
     }
-
 }
